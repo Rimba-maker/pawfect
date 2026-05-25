@@ -1,0 +1,56 @@
+---
+const pricingData = [
+  { service: "Basic Bath", small: "150k", medium: "200k", large: "250k", giant: "350k" },
+  { service: "Full Grooming", small: "250k", medium: "350k", large: "450k", giant: "600k" },
+  { service: "Spa Premium", small: "400k", medium: "550k", large: "750k", giant: "950k" },
+  { service: "Boarding / Malam", small: "200k", medium: "250k", large: "300k", giant: "400k" },
+  { service: "Daycare (8 Jam)", small: "150k", medium: "200k", large: "250k", giant: "250k" },
+];
+---
+
+<section id="pricing" class="py-24 bg-canvas-soft">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-primary font-bold tracking-wider uppercase text-sm mb-2">Estimasi Biaya</h2>
+      <h3 class="text-4xl md:text-5xl font-display font-bold text-ink mb-6">Pricing Reference</h3>
+      <p class="text-body text-lg">
+        Berikut adalah panduan harga dasar layanan kami berdasarkan ukuran anabul. Harga pasti akan disesuaikan setelah konsultasi dengan groomer kami.
+      </p>
+    </div>
+
+    <div class="overflow-x-auto bg-canvas rounded-xl border border-mute/20 shadow-sm">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-ink text-canvas border-b border-mute/20">
+            <th class="py-5 px-6 font-display font-semibold text-lg whitespace-nowrap">Layanan (IDR)</th>
+            <th class="py-5 px-6 font-display font-semibold text-lg text-center">Small<br/><span class="text-xs font-sans text-canvas-soft/70 font-normal">(&lt; 5 kg)</span></th>
+            <th class="py-5 px-6 font-display font-semibold text-lg text-center">Medium<br/><span class="text-xs font-sans text-canvas-soft/70 font-normal">(5 - 15 kg)</span></th>
+            <th class="py-5 px-6 font-display font-semibold text-lg text-center">Large<br/><span class="text-xs font-sans text-canvas-soft/70 font-normal">(15 - 30 kg)</span></th>
+            <th class="py-5 px-6 font-display font-semibold text-lg text-center">Giant<br/><span class="text-xs font-sans text-canvas-soft/70 font-normal">(&gt; 30 kg)</span></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-mute/20">
+          {pricingData.map((row, index) => (
+            <tr class="hover:bg-canvas-soft/50 transition-colors">
+              <td class="py-4 px-6 font-medium text-ink whitespace-nowrap">{row.service}</td>
+              <td class="py-4 px-6 text-body text-center">{row.small}</td>
+              <td class="py-4 px-6 text-body text-center">{row.medium}</td>
+              <td class="py-4 px-6 text-body text-center">{row.large}</td>
+              <td class="py-4 px-6 text-body text-center">{row.giant}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-8 flex items-start gap-4 p-6 bg-canvas border-l-4 border-primary rounded-r-xl shadow-sm">
+      <div class="text-2xl mt-1">⚠️</div>
+      <div>
+        <h4 class="font-bold text-ink mb-1">Catatan Penting:</h4>
+        <p class="text-body">
+          Pricing di atas bervariasi untuk ras berbulu panjang (long-haired breed) dengan kondisi bulu kusut parah (severe matting) yang mungkin dikenakan biaya tambahan <span class="font-semibold text-ink">+20% hingga +30%</span> dari harga dasar.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

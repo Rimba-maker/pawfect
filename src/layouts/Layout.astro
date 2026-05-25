@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { 
+  title, 
+  description = "Pet studio one-stop: grooming premium, boarding & hotel, daycare, training, dan shop premium brand." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="antialiased min-h-screen">
+		<slot />
+	</body>
+</html>

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ff4f00;
+  --color-canvas: #fffefb;
+  --color-canvas-soft: #f8f4f0;
+  --color-ink: #201515;
+  --color-body: #605d52;
+  --color-mute: #c5c0b1;
+
+  --font-display: "Quicksand", "Nunito", sans-serif;
+  --font-sans: "Inter", sans-serif;
+
+  --radius-xl: 12px;
+  --radius-lg: 12px;
+  --radius-md: 12px;
+}
+
+@layer base {
+  html, body {
+    background-color: var(--color-canvas);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+  }
+}

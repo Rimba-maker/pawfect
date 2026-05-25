@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/react/Hero.tsx';
+import Services from '../components/react/Services.tsx';
+import GroomingMenu from '../components/react/GroomingMenu.tsx';
+import Boarding from '../components/react/Boarding.tsx';
+import Shop from '../components/react/Shop.tsx';
+import Training from '../components/react/Training.tsx';
+import Groomers from '../components/react/Groomers.tsx';
+import Membership from '../components/react/Membership.tsx';
+import PetGallery from '../components/react/PetGallery.tsx';
+import Testimonial from '../components/react/Testimonial.tsx';
+import FAQ from '../components/react/FAQ.tsx';
+import BookingForm from '../components/react/BookingForm.tsx';
+import Pricing from '../components/Pricing.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Pawfect Pet Studio — Premium Pet Grooming, Boarding & Shop">
+	<Navbar />
+	
+	<main>
+		<Hero client:load />
+		<Services client:visible />
+		<GroomingMenu client:visible />
+		<Boarding client:visible />
+		<Shop client:visible />
+		<Training client:visible />
+		<Groomers client:visible />
+		<Pricing />
+		<Membership client:visible />
+		<PetGallery client:visible />
+		<Testimonial client:visible />
+		<FAQ client:visible />
+		<BookingForm client:idle />
+	</main>
+
+	<Footer />
+</Layout>
