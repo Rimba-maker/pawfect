@@ -36,7 +36,7 @@
   }
   p { text-wrap: pretty; }
   ::selection { background: var(--color-ink); color: var(--color-marigold); }
-  :focus-visible { outline: 3px solid var(--color-ink); outline-offset: 3px; border-radius: 6px; }
+  :focus-visible { outline: 3px solid var(--color-ink); outline-offset: 3px; }
   .on-ink :focus-visible, .on-lilac :focus-visible { outline-color: #fff; }
   a { text-underline-offset: 0.2em; text-decoration-thickness: 2px; }
   input, select, textarea, button { font: inherit; }
