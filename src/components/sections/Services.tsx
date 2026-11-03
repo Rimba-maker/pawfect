@@ -30,10 +30,10 @@ export default function Services() {
                 </div>
                 <div className="mt-auto flex items-end justify-between gap-3">
                   {wide(i) && (
-                    <Emblem name={s.id} className="-mb-3 -ml-3 h-44 w-44 shrink-0 transition-transform duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:-rotate-6 md:h-52 md:w-52" />
+                    <Emblem name={s.id} className="-mb-3 -ml-3 h-32 w-32 shrink-0 transition-transform duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:-rotate-6 sm:h-44 sm:w-44 md:h-52 md:w-52" />
                   )}
                   <div className="ml-auto flex items-center gap-3 self-end">
-                    <span className="rounded-full border-[3px] border-current px-4 py-1.5 text-sm font-extrabold">{s.price}</span>
+                    <span className="whitespace-nowrap rounded-full border-[3px] border-current px-4 py-1.5 text-sm font-extrabold">{s.price}</span>
                     <Icon name="arrow" className="h-8 w-8 transition-transform duration-500 group-hover:translate-x-1" />
                   </div>
                 </div>

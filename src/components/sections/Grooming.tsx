@@ -40,13 +40,13 @@ export default function Grooming() {
                       {m.name}
                       {m.popular && <Burst color={C.marigold} className="-my-4 h-[5rem] w-[5rem] shrink-0 rotate-6 text-xs">Paling laris</Burst>}
                     </h3>
-                    <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 font-medium">
+                    <ul className="mt-9 flex flex-wrap gap-x-5 gap-y-1 font-medium">
                       {m.items.map((it) => (
                         <li key={it} className="flex items-center gap-1.5"><Icon name="check" className="h-4 w-4" />{it}</li>
                       ))}
                     </ul>
                   </div>
-                  <p className="font-display text-3xl sm:text-right">{m.price}</p>
+                  <p className="whitespace-nowrap font-display text-3xl sm:text-right">{m.price}</p>
                 </li>
               ))}
             </ul>
