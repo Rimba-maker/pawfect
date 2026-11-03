@@ -38,7 +38,7 @@ export default function Grooming() {
                   <div>
                     <h3 className="t-lg flex items-center gap-3 whitespace-nowrap">
                       {m.name}
-                      {m.popular && <Burst color={C.marigold} className="-my-3 h-[3.75rem] w-[3.75rem] shrink-0 rotate-6 text-[0.65rem]">Paling laris</Burst>}
+                      {m.popular && <Burst color={C.marigold} className="-my-4 h-[5rem] w-[5rem] shrink-0 rotate-6 text-xs">Paling laris</Burst>}
                     </h3>
                     <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 font-medium">
                       {m.items.map((it) => (

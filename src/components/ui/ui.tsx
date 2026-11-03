@@ -59,10 +59,10 @@ export function Poster({ id, tone, title, lead, children, art, className = '' }:
   return (
     <section id={id} aria-labelledby={`${id}-h`} className={`relative overflow-hidden ${toneBg[tone]} ${className}`}>
       <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 md:py-28">
-        <div className="relative mb-12 max-w-4xl md:mb-16">
+        <div className={`relative mb-12 max-w-4xl md:mb-16 ${art ? 'md:pr-48' : ''}`}>
           <h2 id={`${id}-h`} className="t-xl md:-rotate-1">{title}</h2>
           {lead && <p className="mt-5 max-w-xl text-lg font-medium opacity-90 md:text-xl">{lead}</p>}
-          {art && <div aria-hidden="true" className="pointer-events-none absolute -right-6 -top-6 hidden w-40 rotate-6 md:block lg:w-48">{art}</div>}
+          {art && <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 hidden w-36 rotate-6 md:block lg:w-44">{art}</div>}
         </div>
         {children}
       </div>
