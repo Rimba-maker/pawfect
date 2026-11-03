@@ -7,10 +7,10 @@ export type Tone = 'marigold' | 'pink' | 'teal' | 'lilac' | 'ink' | 'paper';
 
 export const services = [
   { id: 'grooming', icon: 'bath', title: 'Grooming', tone: 'teal', price: 'Rp 150k', list: ['Bath & blow dry', 'Full grooming & styling', 'Spa: mud bath, aromaterapi'], photo: 'chihuahua-bath' },
-  { id: 'boarding', icon: 'bed', title: 'Hotel', tone: 'lilac', price: 'Rp 200k /malam', list: ['Standard, Comfort, Royal', 'Foto & video harian', 'Webcam di Royal Suite'], photo: null },
-  { id: 'daycare', icon: 'sun', title: 'Daycare', tone: 'paper', price: 'Rp 150–250k', list: ['Half-day & full-day', 'Main bareng & sosialisasi', 'Update foto via WhatsApp'], photo: null },
+  { id: 'boarding', icon: 'bed', title: 'Hotel', tone: 'lilac', price: 'Rp 200k /malam', list: ['Standard, Comfort, Royal', 'Foto & video harian', 'Webcam di Royal Suite'], photo: 'sleeping-small' },
+  { id: 'daycare', icon: 'sun', title: 'Daycare', tone: 'paper', price: 'Rp 150–250k', list: ['Half-day & full-day', 'Main bareng & sosialisasi', 'Update foto via WhatsApp'], photo: 'dalmatian-border' },
   { id: 'training', icon: 'grad', title: 'Sekolah', tone: 'marigold', price: 'Rp 800k /paket', list: ['Puppy class', 'Obedience', 'Perilaku & kecemasan'], photo: 'sit-train' },
-  { id: 'shop', icon: 'bag', title: 'Toko', tone: 'paper', price: 'Variasi harga', list: ['Makanan & camilan', 'Mainan & tempat tidur', 'Suplemen & perawatan'], photo: null },
+  { id: 'shop', icon: 'bag', title: 'Toko', tone: 'paper', price: 'Variasi harga', list: ['Makanan & camilan', 'Mainan & tempat tidur', 'Suplemen & perawatan'], photo: 'treats-bones' },
   { id: 'vet', icon: 'heart', title: 'Konsultasi Dokter', tone: 'teal', price: 'Rp 250k', list: ['Dokter hewan Senin–Sabtu', 'Vaksinasi', 'Cek kesehatan dasar'], photo: 'vet-team' },
 ] as const;
 
@@ -107,7 +107,7 @@ export const pets = [
   { name: 'Coco', breed: 'Border Collie', age: '5 tahun', fun: 'Hafal 40 kata.', photo: 'collie-beach' },
   { name: 'Prof. Fig', breed: 'Retriever mix', age: '6 tahun', fun: 'Rutin membaca majalah (menggigitnya).', photo: 'dog-glasses' },
   { name: 'Sunny', breed: 'Golden pup', age: '5 bulan', fun: 'Berlari lebih cepat dari kakinya.', photo: 'puppy-run' },
-  { name: 'Duke', breed: 'Golden Retriever', age: '7 tahun', fun: 'Pose potret favoritnya: serius.', photo: 'golden-dark' },
+  { name: 'Pip', breed: 'Chihuahua', age: '1 tahun', fun: 'Topi busa adalah gaya resmi mandinya.', photo: 'chihuahua-bath' },
   { name: 'Honey', breed: 'Golden Retriever', age: '3 tahun', fun: 'Suka disisir sambil dengar hujan.', photo: 'golden-soft' },
   { name: 'Mochi', breed: 'Poodle', age: '2 tahun', fun: 'Pelukan lebih lama dari jadwal.', photo: 'hug-poodle' },
   { name: 'Wrinkle & Pleat', breed: 'Shar Pei', age: '3 tahun', fun: 'Kembar? Bukan, tetangga.', photo: 'shar-pei-play' },

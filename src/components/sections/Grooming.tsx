@@ -50,7 +50,10 @@ export default function Grooming() {
               {menu.map((m) => (
                 <li key={m.name} className="relative grid gap-3 py-6 sm:grid-cols-[1fr_auto] sm:gap-6">
                   <div>
-                    <h3 className="t-lg">{m.name}</h3>
+                    <h3 className="t-lg flex flex-wrap items-center gap-3">
+                      {m.name}
+                      {m.popular && <Burst color={C.marigold} className="h-16 w-16 rotate-6 text-[0.7rem]">Paling laris</Burst>}
+                    </h3>
                     <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 font-medium">
                       {m.items.map((it) => (
                         <li key={it} className="flex items-center gap-1.5"><Icon name="check" className="h-4 w-4" />{it}</li>
@@ -58,9 +61,6 @@ export default function Grooming() {
                     </ul>
                   </div>
                   <p className="font-display text-3xl sm:text-right">{m.price}</p>
-                  {m.popular && (
-                    <Burst color={C.marigold} className="absolute -top-3 right-24 hidden h-20 w-20 rotate-12 text-sm sm:grid">Paling laris</Burst>
-                  )}
                 </li>
               ))}
             </ul>

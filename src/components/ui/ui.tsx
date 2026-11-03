@@ -39,7 +39,7 @@ const shapes: Record<Shape, string> = {
 };
 
 /** Photo in a flat frame. `duo` turns the photo into a one-colour print (grayscale multiplied into a candy field). */
-export function Photo({ name, shape = 'rect', duo, className = '', fit = 'object-cover', eager = false }: { name: string; shape?: Shape; duo?: string; className?: string; fit?: string; eager?: boolean }) {
+export function Photo({ name, shape = 'rect', duo, className = '', fit = 'object-cover', eager = false, pos }: { name: string; shape?: Shape; duo?: string; className?: string; fit?: string; eager?: boolean; pos?: string }) {
   return (
     <div className={`relative overflow-hidden ${shapes[shape]} ${className}`} style={duo ? { background: duo } : { background: '#14110f' }}>
       <img
@@ -47,6 +47,7 @@ export function Photo({ name, shape = 'rect', duo, className = '', fit = 'object
         alt={alt(name)}
         loading={eager ? 'eager' : 'lazy'}
         decoding="async"
+        style={pos ? { objectPosition: pos } : undefined}
         className={`absolute inset-0 h-full w-full ${fit} ${duo ? 'mix-blend-multiply grayscale contrast-125' : ''}`}
       />
     </div>

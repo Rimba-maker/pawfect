@@ -14,9 +14,8 @@ export default function Training() {
             <article className="relative overflow-hidden rounded-[2rem] border-[3px] border-ink bg-paper">
               <Photo name={t.photo} shape="rect" className="aspect-[4/3] w-full rounded-none border-b-[3px] border-ink" duo={i === 2 ? '#ff5fa2' : undefined} />
               <div className="p-6 md:p-7">
-                <p className="text-sm font-extrabold uppercase tracking-wide">{t.age}</p>
-                <h3 className="t-lg mt-1">{t.name}</h3>
-                <p className="mt-1 font-semibold">{t.sessions}</p>
+                <h3 className="t-lg">{t.name}</h3>
+                <p className="mt-2 font-semibold">{t.age} · {t.sessions}</p>
                 <ul className="mt-4 space-y-1.5 font-medium">
                   {t.list.map((l) => (
                     <li key={l} className="flex items-center gap-2"><Paw className="h-4 w-4 shrink-0" />{l}</li>
