@@ -1,96 +1,65 @@
 ---
-const branches = [
-  "Kelapa Gading",
-  "Kemang",
-  "BSD",
-  "Bintaro",
-  "Bandung Dago"
-];
-
-const socials = [
-  { name: "Instagram", handle: "@pawfectpetstudio", href: "#" },
-  { name: "TikTok", handle: "@pawfectpetstudio", href: "#" },
-  { name: "YouTube", handle: "Pawfect Pet Studio", href: "#" }
-];
+import { branches, IG, WA } from '../data/content';
+import { credits } from '../data/images';
 ---
 
-<footer class="bg-ink text-canvas py-16 mt-24">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-      {/* Brand Column */}
-      <div class="space-y-6">
-        <a href="/" class="flex items-center gap-2 group inline-block py-2">
-          <span class="font-display font-bold text-3xl tracking-tight text-canvas">Pawfect<span class="text-primary">.</span></span>
-        </a>
-        <p class="text-canvas-soft italic font-display text-lg">
-          "Furry, fluffy, family — we care."
-        </p>
-      </div>
-
-      {/* Branches Column */}
+<footer class="on-ink bg-ink text-paper">
+  <div class="mx-auto max-w-7xl px-5 py-16 sm:px-8 md:py-24">
+    <div class="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr]">
       <div>
-        <h4 class="font-display font-bold text-lg mb-6 text-primary">Lokasi Cabang</h4>
-        <ul class="space-y-2 text-canvas-soft/80 flex flex-col">
-          {branches.map(branch => (
-            <li>
-              <a href="#" class="inline-block py-2 w-full hover:text-canvas transition-colors">{branch}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Hours & Contact */}
-      <div>
-        <h4 class="font-display font-bold text-lg mb-6 text-primary">Jam Operasional</h4>
-        <ul class="space-y-2 text-canvas-soft/80">
-          <li class="py-1">Selasa - Minggu</li>
-          <li class="py-1 font-semibold text-canvas">09:00 - 20:00</li>
-          <li class="text-sm text-mute mt-4 py-1">Senin tutup (maintenance)</li>
-        </ul>
-        
-        <h4 class="font-display font-bold text-lg mt-8 mb-4 text-primary">Sosial Media</h4>
-        <ul class="space-y-2 text-canvas-soft/80 flex flex-col">
-          {socials.map(social => (
-            <li>
-              <a href={social.href} class="hover:text-primary transition-colors flex items-center justify-between py-2.5">
-                <span>{social.name}</span>
-                <span class="text-sm opacity-70">{social.handle}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Newsletter */}
-      <div>
-        <h4 class="font-display font-bold text-lg mb-6 text-primary">Newsletter</h4>
-        <p class="text-canvas-soft/80 mb-4 leading-relaxed">
-          Pet care tips & promo eksklusif langsung ke inbox kamu.
-        </p>
-        <form class="space-y-3" onsubmit="event.preventDefault();">
-          <input 
-            type="email" 
-            placeholder="Email kamu" 
-            aria-label="Alamat email untuk newsletter"
-            class="w-full px-4 py-3.5 rounded-xl bg-canvas/10 border border-canvas/20 text-canvas placeholder:text-canvas/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm"
-            required
-          />
-          <button 
-            type="submit" 
-            class="w-full bg-primary text-on-primary px-4 py-3.5 rounded-xl font-bold hover:bg-primary/90 transition-colors shadow-sm"
-          >
-            Subscribe 🐾
-          </button>
+        <p class="font-display text-[clamp(3rem,10vw,6rem)] leading-[0.9] text-marigold">Pawfect.</p>
+        <p class="mt-4 max-w-sm text-xl font-semibold">Furry, fluffy, family. We care.</p>
+        <form class="mt-8 flex max-w-sm gap-2" id="news" novalidate>
+          <label for="news-email" class="sr-only">Email untuk newsletter</label>
+          <input id="news-email" type="email" required placeholder="Email kamu" class="min-w-0 flex-1 rounded-full border-[3px] border-paper bg-transparent px-5 py-3 font-medium placeholder:text-paper/60" />
+          <button class="pill !min-h-0 !border-marigold !bg-marigold !px-5 !py-3 !text-base !text-ink hover:!bg-pink">Gabung</button>
         </form>
+        <p id="news-msg" class="mt-2 min-h-6 text-sm font-semibold text-marigold" role="status"></p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl text-pink">Cabang contoh</h2>
+        <ul class="mt-3 space-y-1 font-medium">
+          {branches.map((b) => <li>{b}</li>)}
+        </ul>
+        <h2 class="mt-8 font-display text-2xl text-pink">Jam buka</h2>
+        <p class="mt-3 font-medium">Selasa–Minggu, 09.00–20.00.<br />Senin tutup untuk perawatan studio.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl text-pink">Ikuti kami</h2>
+        <ul class="mt-3 space-y-1 font-medium">
+          <li>Instagram {IG}</li>
+          <li>TikTok: cute pets</li>
+          <li>YouTube: pet care tips</li>
+        </ul>
+        <a href={WA} target="_blank" rel="noopener noreferrer" class="pill mt-6 !border-teal !bg-teal !text-ink hover:!bg-paper">Chat WhatsApp</a>
       </div>
     </div>
-    
-    <div class="border-t border-canvas/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-canvas-soft/60 text-sm gap-4">
-      <p class="text-center md:text-left">&copy; {new Date().getFullYear()} Pawfect Pet Studio. All rights reserved.</p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="#" class="py-2 hover:text-canvas transition-colors">Privacy Policy</a>
-        <a href="#" class="py-2 hover:text-canvas transition-colors">Terms of Service</a>
-      </div>
+
+    <div class="mt-14 border-t-[3px] border-paper/20 pt-8 text-sm font-medium text-paper/80">
+      <p>Situs demo Pawfect Pet Studio. Semua nama, angka, harga, cabang, dan ulasan adalah contoh. Foto adalah stok dan tidak menampilkan staf atau pelanggan Pawfect.</p>
+      <details class="mt-4">
+        <summary class="cursor-pointer font-bold text-marigold">Kredit foto</summary>
+        <ul class="mt-3 grid gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
+          {credits.map((c) => (
+            <li>
+              <a class="text-paper" href={c.source === 'Pexels' ? `https://www.pexels.com/photo/${c.id}/` : `https://unsplash.com/photos/${c.id.split('-')[0]}`} target="_blank" rel="noopener noreferrer">{c.alt}</a>
+              <span class="opacity-70">, {c.source}{c.author ? `, ${c.author}` : ''}</span>
+            </li>
+          ))}
+        </ul>
+      </details>
     </div>
   </div>
 </footer>
+
+<script>
+  const form = document.getElementById('news') as HTMLFormElement | null;
+  const msg = document.getElementById('news-msg');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = (document.getElementById('news-email') as HTMLInputElement).value;
+    if (msg) msg.textContent = /.+@.+\..+/.test(email) ? 'Terima kasih! Ini demo, belum ada email tersimpan.' : 'Masukkan alamat email yang valid.';
+  });
+</script>

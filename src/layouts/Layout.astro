@@ -2,27 +2,54 @@
 import '../styles/global.css';
 
 interface Props {
-	title: string;
-	description?: string;
+  title: string;
+  description?: string;
 }
 
-const { 
-  title, 
-  description = "Pet studio one-stop: grooming premium, boarding & hotel, daycare, training, dan shop premium brand." 
+const {
+  title,
+  description = 'Pet studio satu atap: grooming, hotel, daycare, sekolah, klinik dan toko untuk anabul. Contoh situs demo Pawfect Pet Studio.',
 } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'PetStore',
+  name: 'Pawfect Pet Studio',
+  description,
+  openingHours: 'Tu-Su 09:00-20:00',
+  areaServed: ['Jakarta', 'BSD', 'Bintaro', 'Bandung'],
+  slogan: 'Pawfect Care, For Your Furry Family.',
+};
 ---
 
 <!doctype html>
 <html lang="id">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="antialiased min-h-screen">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffb400" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/frenchie-blue.jpg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;800&display=swap"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body class="antialiased min-h-screen">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-ink focus:text-marigold focus:px-4 focus:py-2 focus:rounded-full"
+      >Lewati ke konten</a
+    >
+    <slot />
+  </body>
 </html>
