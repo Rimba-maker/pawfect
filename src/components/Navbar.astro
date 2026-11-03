@@ -1,105 +1,54 @@
 ---
-const navLinks = [
-  { name: 'Services', href: '#services' },
-  { name: 'Grooming', href: '#grooming' },
-  { name: 'Boarding', href: '#boarding' },
-  { name: 'Shop', href: '#shop' },
-  { name: 'Training', href: '#training' },
+const links = [
+  { href: '#services', label: 'Layanan' },
+  { href: '#grooming', label: 'Grooming' },
+  { href: '#boarding', label: 'Hotel' },
+  { href: '#shop', label: 'Toko' },
+  { href: '#training', label: 'Sekolah' },
+  { href: '#membership', label: 'Club' },
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full bg-canvas/90 backdrop-blur-md border-b border-mute/20 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
-      {/* Logo */}
-      <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="flex items-center gap-2 group p-2 -ml-2">
-          <span class="text-3xl filter grayscale-[20%] group-hover:scale-110 transition-transform duration-300">🐾</span>
-          <span class="font-display font-bold text-2xl tracking-tight text-ink">Pawfect<span class="text-primary">.</span></span>
-        </a>
-      </div>
+<header class="sticky top-0 z-50 border-b-[3px] border-ink bg-ink text-marigold">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8" aria-label="Navigasi utama">
+    <a href="#top" class="flex items-center gap-2 no-underline" aria-label="Pawfect Pet Studio, ke atas">
+      <svg viewBox="0 0 120 110" class="h-9 w-10" aria-hidden="true">
+        <path d="M60 36C40 20 20 14 6 18" stroke="#ff5fa2" stroke-width="12" stroke-linecap="round" fill="none"></path>
+        <path d="M64 36C84 20 104 14 116 18" stroke="#12b5b0" stroke-width="12" stroke-linecap="round" fill="none"></path>
+        <g transform="translate(24 28) scale(.24)">
+          <path d="M150 20C70 20 36 88 44 168c8 78 52 142 106 142s98-64 106-142c8-80-26-148-106-148z" fill="#ffb400"></path>
+          <path d="M62 52C20 44-6 110 4 196c5 40 40 50 58 14 14-30 22-96 26-142z" fill="#ffb400"></path>
+          <path d="M238 52c42-8 68 58 58 144-5 40-40 50-58 14-14-30-22-96-26-142z" fill="#ffb400"></path>
+        </g>
+      </svg>
+      <span class="font-display text-2xl leading-none">Pawfect</span>
+    </a>
 
-      {/* Desktop Menu */}
-      <nav class="hidden md:flex space-x-8">
-        {navLinks.map((link) => (
-          <a 
-            href={link.href} 
-            class="text-body hover:text-primary font-medium transition-colors duration-200 py-2"
-          >
-            {link.name}
-          </a>
-        ))}
-      </nav>
-
-      {/* CTA Button */}
-      <div class="hidden md:flex items-center">
-        <a 
-          href="#booking" 
-          class="bg-primary text-on-primary px-6 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors duration-300 flex items-center gap-2 shadow-sm"
-        >
-          Book Grooming <span>🐾</span>
-        </a>
-      </div>
-
-      {/* Mobile menu button */}
-      <div class="md:hidden flex items-center">
-        <button id="mobile-menu-btn" class="text-ink hover:text-primary focus:outline-none p-3 -mr-3" aria-label="Toggle menu">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" id="menu-icon-path" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  {/* Mobile Menu Panel */}
-  <div id="mobile-menu" class="hidden md:hidden bg-canvas border-b border-mute/20 absolute w-full left-0 shadow-lg origin-top transition-all duration-300">
-    <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
-      {navLinks.map((link) => (
-        <a 
-          href={link.href} 
-          class="mobile-nav-link text-ink hover:text-primary font-medium py-3 px-4 rounded-lg hover:bg-canvas-soft transition-colors"
-        >
-          {link.name}
-        </a>
+    <ul class="hidden items-center gap-1 lg:flex">
+      {links.map((l) => (
+        <li><a href={l.href} class="rounded-full px-4 py-2 font-bold no-underline transition-colors duration-300 hover:bg-marigold hover:text-ink">{l.label}</a></li>
       ))}
-      <a 
-        href="#booking" 
-        class="mobile-nav-link bg-primary text-on-primary px-4 py-4 mt-4 rounded-xl font-bold text-center shadow-sm"
-      >
-        Book Grooming 🐾
-      </a>
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <a href="#booking" class="pill !min-h-0 !border-marigold !bg-marigold !px-5 !py-2.5 !text-base !text-ink whitespace-nowrap hover:!bg-pink">Book<span class="hidden sm:inline">&nbsp;Grooming</span></a>
+      <details class="relative lg:hidden">
+        <summary class="grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border-[3px] border-marigold [&::-webkit-details-marker]:hidden" aria-label="Buka menu">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </summary>
+        <ul class="absolute right-0 top-14 w-56 rounded-3xl border-[3px] border-marigold bg-ink p-3">
+          {links.map((l) => (
+            <li><a href={l.href} class="block rounded-full px-4 py-3 text-lg font-bold no-underline hover:bg-marigold hover:text-ink">{l.label}</a></li>
+          ))}
+        </ul>
+      </details>
     </div>
-  </div>
+  </nav>
 </header>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const path = document.getElementById('menu-icon-path');
-  const links = document.querySelectorAll('.mobile-nav-link');
-
-  let isMenuOpen = false;
-
-  function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-    if (isMenuOpen) {
-      menu.classList.remove('hidden');
-      // Change icon to X
-      path.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-    } else {
-      menu.classList.add('hidden');
-      // Change icon to Hamburger
-      path.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-    }
-  }
-
-  btn.addEventListener('click', toggleMenu);
-
-  // Close menu when a link is clicked
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      if(isMenuOpen) toggleMenu();
-    });
-  });
+  // Close the mobile menu after choosing a link.
+  document.querySelectorAll('header details a').forEach((a) =>
+    a.addEventListener('click', () => a.closest('details')?.removeAttribute('open')),
+  );
 </script>

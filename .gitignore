@@ -32,3 +32,9 @@ pnpm-debug.log*
 181-pet-shop-grooming-PRD.md
 fetch_images.js
 fetch_images_2.js
+
+# Impeccable working files (keep surface briefs, drop scratch)
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/decision-payload.json
+.impeccable/live/
