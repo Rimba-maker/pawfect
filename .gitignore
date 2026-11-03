@@ -38,3 +38,10 @@ fetch_images_2.js
 .impeccable/mocks/
 .impeccable/decision-payload.json
 .impeccable/live/
+
+# Konteks desain pribadi, jangan di-commit
+PRODUCT.md
+DESIGN.md
+.impeccable/
+.claude/skills/impeccable/
+.claude/agents/impeccable-*
