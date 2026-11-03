@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { Burst, C, Icon } from '../art/Art';
+import { Icon } from '../art/Art';
 import { Photo, Poster, toneBg } from '../ui/ui';
 import { products, shopCats, type ShopCat } from '../../data/content';
-
-const duoOf: Record<string, string> = { marigold: C.marigold, pink: C.pink, teal: C.teal, lilac: C.lilac };
 
 export default function Shop() {
   const [cat, setCat] = useState<ShopCat>('Semua');
@@ -35,7 +33,7 @@ export default function Shop() {
           return (
             <li key={p.id} className={i % 5 === 0 ? 'md:col-span-2' : ''}>
               <article className={`flex h-full flex-col overflow-hidden rounded-[1.75rem] border-[3px] border-ink ${toneBg[p.tone]}`}>
-                <Photo name={p.photo} duo={p.tone === 'paper' ? undefined : duoOf[p.tone]} shape="rect" className={`w-full rounded-none ${i % 5 === 0 ? 'aspect-[16/9]' : 'aspect-square'}`} />
+                <Photo name={p.photo} shape="rect" className={`w-full rounded-none ${i % 5 === 0 ? 'aspect-[16/9]' : 'aspect-square'}`} />
                 <div className="flex flex-1 flex-col justify-between gap-4 p-4 md:p-5">
                   <div>
                     <h3 className="text-xl leading-tight">{p.name}</h3>

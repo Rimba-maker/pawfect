@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { C, Icon } from '../art/Art';
+import { Icon } from '../art/Art';
 import { Photo, Poster } from '../ui/ui';
 import { testimonials } from '../../data/content';
 
@@ -45,9 +45,10 @@ export default function Testimonials() {
         <div className="relative mx-auto w-full max-w-xs">
           <AnimatePresence mode="wait">
             <motion.div key={t.photo} initial={{ rotate: -4, scale: 0.97 }} animate={{ rotate: 0, scale: 1 }} exit={{ rotate: 3 }} transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}>
-              <Photo name={t.photo} shape="arch" duo={i % 2 ? C.pink : undefined} className="aspect-[4/5] w-full border-[3px] border-ink" />
+              <Photo name={t.photo} shape="arch" className="aspect-[4/5] w-full border-[3px] border-ink" />
             </motion.div>
           </AnimatePresence>
+          <p className="mt-3 text-sm font-semibold">Foto stok, bukan pelanggan Pawfect.</p>
         </div>
       </div>
 

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 /** Hand-authored flat SVG illustrations. One ink silhouette, candy ribbons, no shadows. */
 
-export const C = { marigold: '#ffb400', pink: '#ff5fa2', teal: '#12b5b0', lilac: '#7b5cff', ink: '#14110f', paper: '#fffdf6' };
+export const C = { marigold: '#ffb400', pink: '#ff5fa2', teal: '#12b5b0', lilac: '#7b5cff', ink: '#14110f', paper: '#fffefc' };
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -189,4 +189,37 @@ export function Icon({ name, className = 'h-9 w-9' }: { name: string; className?
       {paths[name]}
     </svg>
   );
+}
+
+/** Service emblems: one flat silhouette per poster. 200x200 viewBox. */
+export function Emblem({ name, className = 'h-28 w-28' }: { name: string; className?: string }) {
+  const head = (x: number, y: number, s: number) => <g transform={`translate(${x} ${y}) scale(${s})`}><DogHead /></g>;
+  const cat = (x: number, y: number, s: number) => <g transform={`translate(${x} ${y}) scale(${s})`}><CatHead /></g>;
+  const art: Record<string, ReactNode> = {
+    grooming: <>{head(40, 4, 0.42)}<path d="M14 120h172v20a40 40 0 0 1-40 40H54a40 40 0 0 1-40-40z" fill={C.lilac} /><circle cx="40" cy="108" r="16" fill={C.paper} /><circle cx="168" cy="96" r="12" fill={C.paper} /><circle cx="150" cy="116" r="8" fill={C.paper} /></>,
+    boarding: <>{head(42, 22, 0.4)}<rect x="12" y="132" width="176" height="48" rx="24" fill={C.pink} /><path d="M140 22h22l-22 24h22M168 6h16l-16 18h16" stroke={C.ink} strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" /></>,
+    daycare: <><circle cx="162" cy="34" r="22" fill={C.marigold} />{head(6, 50, 0.3)}{cat(92, 44, 0.36)}<path d="M10 176h180" stroke={C.ink} strokeWidth="8" strokeLinecap="round" /></>,
+    training: <>{head(40, 40, 0.42)}<path d="M100 14l76 28-76 28-76-28z" fill={C.pink} /><path d="M62 62v22c0 12 76 12 76 0V62" fill={C.teal} /><path d="M176 42v42" stroke={C.marigold} strokeWidth="6" strokeLinecap="round" /><circle cx="176" cy="90" r="8" fill={C.marigold} /></>,
+    shop: <>{head(40, 6, 0.42)}<rect x="52" y="150" width="96" height="22" rx="11" fill={C.pink} /><circle cx="50" cy="148" r="14" fill={C.pink} /><circle cx="50" cy="176" r="14" fill={C.pink} /><circle cx="150" cy="148" r="14" fill={C.pink} /><circle cx="150" cy="176" r="14" fill={C.pink} /></>,
+    vet: <>{cat(34, 40, 0.44)}<path d="M160 24c0-18 28-18 28 0 0 16-14 24-14 24s-14-8-14-24z" fill={C.pink} /><path d="M30 28v34M13 45h34" stroke={C.ink} strokeWidth="9" strokeLinecap="round" /></>,
+  };
+  return <svg viewBox="0 0 200 200" className={className} aria-hidden="true">{art[name]}</svg>;
+}
+
+/** One distinct pet emblem per groomer: the animal they specialise in plus their tool. 200x220 viewBox. */
+export function GroomerEmblem({ kind, tone = C.marigold }: { kind: string; tone?: string }) {
+  const head = (s = 0.5, x = 50, y = 46) => <g transform={`translate(${x} ${y}) scale(${s})`}><DogHead eye={tone} /></g>;
+  const cat = (s = 0.52, x = 42, y = 52) => <g transform={`translate(${x} ${y}) scale(${s})`}><CatHead eye={tone} /></g>;
+  const art: Record<string, ReactNode> = {
+    scissors: <>{head()}<g stroke={C.ink} strokeWidth="9" strokeLinecap="round"><path d="M22 22l62 62M84 22L22 84" /></g><circle cx="26" cy="96" r="12" fill="none" stroke={C.ink} strokeWidth="7" /><circle cx="80" cy="96" r="12" fill="none" stroke={C.ink} strokeWidth="7" /></>,
+    bow: <>{head()}<path d="M100 54l-34-22v44zM100 54l34-22v44z" fill={C.pink} /><circle cx="100" cy="54" r="9" fill={C.ink} /></>,
+    comb: <>{cat()}<rect x="40" y="184" width="120" height="16" rx="5" fill={C.teal} />{[0, 1, 2, 3, 4, 5, 6, 7].map((i) => <rect key={i} x={46 + i * 14} y="198" width="6" height="14" rx="3" fill={C.teal} />)}</>,
+    crown: <>{head(0.5, 50, 56)}<path d="M54 56l14-34 16 22 16-30 16 30 16-22 14 34z" fill={C.marigold} /></>,
+    bubbles: <>{cat()}<circle cx="46" cy="50" r="22" fill={C.paper} /><circle cx="160" cy="40" r="16" fill={C.paper} /><circle cx="170" cy="86" r="10" fill={C.paper} /><circle cx="26" cy="104" r="10" fill={C.paper} /></>,
+    poodle: <>{head(0.5, 50, 60)}<circle cx="100" cy="46" r="26" fill={C.ink} /><circle cx="54" cy="130" r="22" fill={C.ink} /><circle cx="148" cy="130" r="22" fill={C.ink} /></>,
+  };
+  return <svg viewBox="0 0 200 220" className="h-full w-full" role="img" aria-label="Emblem groomer">
+    <rect width="200" height="220" fill={tone === C.paper ? C.teal : tone} opacity="0" />
+    {art[kind]}
+  </svg>;
 }

@@ -3,7 +3,6 @@ import { Photo, Poster, Reveal } from '../ui/ui';
 import { boarding, daycare } from '../../data/content';
 
 const lift = ['md:mt-14', 'md:mt-0', 'md:mt-24'];
-const duo = [C.teal, undefined, C.pink];
 
 export default function Boarding() {
   return (
@@ -12,7 +11,7 @@ export default function Boarding() {
         {boarding.map((b, i) => (
           <Reveal key={b.name} delay={i * 0.1} className={lift[i]}>
             <article className="relative">
-              <Photo name={b.photo} shape="arch" duo={duo[i]} className="aspect-[4/5] w-full border-[3px] border-white" />
+              <Photo name={b.photo} shape="arch" className="aspect-[4/5] w-full border-[3px] border-white" />
               {'popular' in b && b.popular && (
                 <Burst color={C.marigold} className="absolute -right-3 -top-5 h-24 w-24 rotate-12 text-base">Paling laris</Burst>
               )}

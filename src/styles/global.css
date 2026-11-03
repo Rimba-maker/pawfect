@@ -7,7 +7,7 @@
   --color-teal: #12b5b0;
   --color-lilac: #7b5cff;
   --color-ink: #14110f;
-  --color-paper: #fffdf6;
+  --color-paper: #fffefc;
   --color-tomato: #ff4a2b;
 
   --font-display: "Caprasimo", "Cooper Black", Georgia, serif;
@@ -67,7 +67,7 @@
   .pill-ink:hover { background: var(--color-paper); color: var(--color-ink); }
   .pill-out { background: transparent; color: var(--color-ink); }
   .pill-out:hover { background: var(--color-ink); color: var(--color-paper); }
-  .pill[disabled], .pill[aria-disabled="true"] { opacity: .4; cursor: not-allowed; transform: none; }
+  .pill[disabled], .pill[aria-disabled="true"] { background: transparent; color: rgb(20 17 15 / .72); border-style: dashed; cursor: not-allowed; transform: none; }
 
   .tilt-l { transform: rotate(-2.5deg); }
   .tilt-r { transform: rotate(2.5deg); }

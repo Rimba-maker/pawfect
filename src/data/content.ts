@@ -71,12 +71,12 @@ export const training = [
 ];
 
 export const groomers = [
-  { name: 'Ms. Linda', role: 'Senior Groomer', note: 'Bersertifikat IGA, 10+ tahun', tone: 'marigold', hair: 'bun' },
-  { name: 'Pak Reza', role: 'Asian Style', note: 'Spesialis Korean Cut', tone: 'teal', hair: 'short' },
-  { name: 'Ms. Maya', role: 'Kucing', note: 'Spesialis grooming kucing', tone: 'lilac', hair: 'long' },
-  { name: 'Pak Andre', role: 'Show Grooming', note: 'Golden, Husky', tone: 'paper', hair: 'cap' },
-  { name: 'Ms. Sari', role: 'Pet Spa', note: 'Spesialis spa', tone: 'marigold', hair: 'wave' },
-  { name: 'Pak Bayu', role: 'Breed Cut', note: 'Poodle & Shih Tzu', tone: 'teal', hair: 'short' },
+  { name: 'Ms. Linda', role: 'Senior Groomer', note: 'Bersertifikat IGA, 10+ tahun', tone: 'marigold', emblem: 'scissors' },
+  { name: 'Pak Reza', role: 'Asian Style', note: 'Spesialis Korean Cut', tone: 'teal', emblem: 'bow' },
+  { name: 'Ms. Maya', role: 'Kucing', note: 'Spesialis grooming kucing', tone: 'lilac', emblem: 'comb' },
+  { name: 'Pak Andre', role: 'Show Grooming', note: 'Golden, Husky', tone: 'paper', emblem: 'crown' },
+  { name: 'Ms. Sari', role: 'Pet Spa', note: 'Spesialis spa', tone: 'marigold', emblem: 'bubbles' },
+  { name: 'Pak Bayu', role: 'Breed Cut', note: 'Poodle & Shih Tzu', tone: 'teal', emblem: 'poodle' },
 ] as const;
 
 export const sizes = ['Small', 'Medium', 'Large', 'Giant'] as const;

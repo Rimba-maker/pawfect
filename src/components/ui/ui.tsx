@@ -62,8 +62,8 @@ export function Poster({ id, tone, title, lead, children, art, className = '' }:
         <div className="relative mb-12 max-w-4xl md:mb-16">
           <h2 id={`${id}-h`} className="t-xl md:-rotate-1">{title}</h2>
           {lead && <p className="mt-5 max-w-xl text-lg font-medium opacity-90 md:text-xl">{lead}</p>}
+          {art && <div aria-hidden="true" className="pointer-events-none absolute -right-6 -top-6 hidden w-40 rotate-6 md:block lg:w-48">{art}</div>}
         </div>
-        {art && <div aria-hidden="true" className="pointer-events-none absolute right-[-3rem] top-6 hidden w-64 rotate-6 md:block lg:right-8 lg:w-72">{art}</div>}
         {children}
       </div>
     </section>

@@ -12,7 +12,7 @@ export default function Training() {
         {training.map((t, i) => (
           <Reveal key={t.name} delay={i * 0.1} className={rise[i]}>
             <article className="relative overflow-hidden rounded-[2rem] border-[3px] border-ink bg-paper">
-              <Photo name={t.photo} shape="rect" className="aspect-[4/3] w-full rounded-none border-b-[3px] border-ink" duo={i === 2 ? '#ff5fa2' : undefined} />
+              <Photo name={t.photo} shape="rect" className="aspect-[4/3] w-full rounded-none border-b-[3px] border-ink" />
               <div className="p-6 md:p-7">
                 <h3 className="t-lg">{t.name}</h3>
                 <p className="mt-2 font-semibold">{t.age} · {t.sessions}</p>
@@ -23,7 +23,7 @@ export default function Training() {
                 </ul>
                 <p className="mt-5 font-display text-3xl">{t.price}</p>
               </div>
-              <span className="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-full bg-ink font-display text-2xl text-marigold" aria-label={`Level ${i + 1}`}>{i + 1}</span>
+              <span className="absolute right-4 top-4 grid h-12 w-12 place-items-center rounded-full bg-ink text-marigold" aria-hidden="true"><Paw className="h-6 w-6" /></span>
             </article>
           </Reveal>
         ))}

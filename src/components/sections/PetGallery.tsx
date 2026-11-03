@@ -11,7 +11,6 @@ const area = [
 /** Focal points so wide and tall crops keep each animal's face. */
 const pos: (string | undefined)[] = [undefined, undefined, undefined, undefined, undefined, '50% 80%', '50% 64%', undefined, undefined, undefined, undefined, '40% 55%'];
 const mobileSpan = ['col-span-2 row-span-2', '', '', '', '', '', 'col-span-2', '', '', '', '', ''];
-const duo = [undefined, undefined, undefined, undefined, C.pink, undefined, C.marigold, undefined, undefined, C.lilac, undefined, undefined];
 
 export default function PetGallery() {
   return (
@@ -20,7 +19,7 @@ export default function PetGallery() {
         {pets.map((p, i) => (
           <li key={p.name} className={`group relative md:[grid-area:var(--ga)] ${mobileSpan[i]}`} style={{ '--ga': area[i] } as CSSProperties}>
             <figure tabIndex={0} className="relative h-full w-full overflow-hidden rounded-[1.75rem] border-[3px] border-ink focus-visible:outline-offset-4">
-              <Photo name={p.photo} duo={duo[i]} pos={pos[i]} shape="rect" className="h-full w-full rounded-none transition-transform duration-700 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:scale-105 group-focus-within:scale-105" />
+              <Photo name={p.photo} pos={pos[i]} shape="rect" className="h-full w-full rounded-none transition-transform duration-700 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:scale-105 group-focus-within:scale-105" />
               <figcaption className="absolute inset-x-0 bottom-0 translate-y-[calc(100%-2.6rem)] bg-ink px-3 py-2 text-paper transition-transform duration-500 [transition-timing-function:cubic-bezier(.16,1,.3,1)] group-hover:translate-y-0 group-focus-within:translate-y-0">
                 <p className="truncate font-display text-lg leading-tight">{p.name}</p>
                 <p className="mt-2 text-sm font-semibold text-marigold">{p.breed}, {p.age}</p>

@@ -1,15 +1,8 @@
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Burst, CatHead, C, DogHead, Icon, RabbitHead } from '../art/Art';
+import { Burst, C, Icon } from '../art/Art';
 import { Photo, Poster } from '../ui/ui';
 import { breedCuts, groomingMenu, groomingTabs, type GroomTab } from '../../data/content';
 
-const heads: Record<GroomTab, JSX.Element> = {
-  Anjing: <svg viewBox="0 0 300 330"><DogHead /></svg>,
-  Kucing: <svg viewBox="0 0 300 300"><CatHead /></svg>,
-  Kelinci: <svg viewBox="0 0 300 360"><RabbitHead /></svg>,
-  'Pet Lain': <svg viewBox="0 0 300 330"><DogHead /></svg>,
-};
 const photos: Record<GroomTab, string> = { Anjing: 'golden-bath', Kucing: 'cat-white-groom', Kelinci: 'cat-comb', 'Pet Lain': 'chihuahua-bath' };
 
 export default function Grooming() {
@@ -35,13 +28,6 @@ export default function Grooming() {
               </button>
             ))}
           </div>
-          <div className="mt-8 hidden w-44 lg:block" aria-hidden="true">
-            <AnimatePresence mode="wait">
-              <motion.div key={tab} initial={{ y: 16, rotate: -4 }} animate={{ y: 0, rotate: 0 }} exit={{ y: -8 }} transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}>
-                {heads[tab]}
-              </motion.div>
-            </AnimatePresence>
-          </div>
         </div>
 
         <div id="groom-panel" role="tabpanel" aria-labelledby={`tab-${tab}`}>
@@ -50,9 +36,9 @@ export default function Grooming() {
               {menu.map((m) => (
                 <li key={m.name} className="relative grid gap-3 py-6 sm:grid-cols-[1fr_auto] sm:gap-6">
                   <div>
-                    <h3 className="t-lg flex flex-wrap items-center gap-3">
+                    <h3 className="t-lg flex items-center gap-3 whitespace-nowrap">
                       {m.name}
-                      {m.popular && <Burst color={C.marigold} className="h-16 w-16 rotate-6 text-[0.7rem]">Paling laris</Burst>}
+                      {m.popular && <Burst color={C.marigold} className="-my-3 h-[3.75rem] w-[3.75rem] shrink-0 rotate-6 text-[0.65rem]">Paling laris</Burst>}
                     </h3>
                     <ul className="mt-2 flex flex-wrap gap-x-5 gap-y-1 font-medium">
                       {m.items.map((it) => (
